@@ -12,15 +12,15 @@ public class RequestService {
 
     public static void addRequestToDb(Request request, Connection connection) {
 
-        int requestId = request.getId();
-        String requestService = request.getService();
-        double requestPrice = request.getPrice();
+        int id = request.getId();
+        String service = request.getService();
+        double price = request.getPrice();
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(ADD_REQUEST_TO_DB);
-            preparedStatement.setInt(1, requestId);
-            preparedStatement.setString(2, requestService);
-            preparedStatement.setDouble(3, requestPrice);
+            preparedStatement.setInt(1, id);
+            preparedStatement.setString(2, service);
+            preparedStatement.setDouble(3, price);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

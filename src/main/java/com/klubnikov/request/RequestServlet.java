@@ -58,7 +58,6 @@ public class RequestServlet extends HttpServlet {
             req.getRequestDispatcher("success.jsp").forward(req, resp);
         } else {
             req.setAttribute("errors", errors);
-            System.out.println(errors);
             req.getRequestDispatcher("save-request.jsp").forward(req, resp);
         }
 
